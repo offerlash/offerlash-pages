@@ -5,7 +5,7 @@
  * - Updates lang switch link(s) href on load for correct deep links
  */
 (function () {
-  var STORAGE_KEY = 'lang';
+  var STORAGE_KEY = 'offerlash.lang';
 
   function getDocLang() {
     var html = document.documentElement;
@@ -94,7 +94,10 @@
     // Optional: If user saved EN and lands on AR home (root), send them to EN home once.
     // Keep it conservative: only auto-redirect on homepage or language-root pages.
     var saved = null;
-    try { saved = localStorage.getItem(STORAGE_KEY); } catch (e) {}
+    try {
+      // Support legacy key for backward compatibility
+      saved = localStorage.getItem(STORAGE_KEY) || localStorage.getItem('lang');
+    } catch (e) {}
     if (!saved) return;
     var p = parts();
     var atHome = (p.length === 0) || // /
@@ -115,6 +118,20 @@
         localStorage.setItem(STORAGE_KEY, getDocLang());
       }
     } catch (e) {}
+    // URL param override ?lang=en|ar
+    try {
+      var params = new URLSearchParams(window.location.search);
+      var forced = params.get('lang');
+      if (forced && (forced === 'en' || forced === 'ar')) {
+        localStorage.setItem(STORAGE_KEY, forced);
+        var target = computeTarget(forced);
+        if (target && (target !== window.location.pathname + window.location.search + window.location.hash)) {
+          window.location.replace(target);
+          return;
+        }
+      }
+    } catch (e) {}
+
     updateLinks();
     bindClicks();
     applyPreferenceRedirect();
