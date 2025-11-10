@@ -1,0 +1,55 @@
+name: QA and Audits
+
+on:
+  workflow_run:
+    workflows: ["Deploy to GitHub Pages"]
+    types: [completed]
+
+jobs:
+  link-check:
+    name: Link checker (lychee)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Run lychee on HTML and Markdown
+        uses: lycheeverse/lychee-action@v1
+        with:
+          # Be verbose and accept common success codes; scan HTML + MD
+          args: --verbose --no-progress --exclude-mail --accept 200,204,206 "./**/*.html" "./**/*.md"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  lint:
+    name: Lint HTML/CSS/JS
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Super-Linter (HTML/CSS/JS)
+        uses: github/super-linter/slim@v6
+        env:
+          VALIDATE_HTML: true
+          VALIDATE_CSS: true
+          VALIDATE_JAVASCRIPT_ES: true
+          DEFAULT_BRANCH: main
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  lighthouse:
+    name: Lighthouse CI (Production URLs)
+    needs: [link-check, lint]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run Lighthouse
+        uses: treosh/lighthouse-ci-action@v10
+        with:
+          urls: |
+            https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/
+            https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/en/
+            https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/shoppers/
+            https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/en/shoppers/
+            https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/marketers/
+            https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/en/marketers/
+            https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/app/
+          uploadArtifacts: true
+          temporaryPublicStorage: true
