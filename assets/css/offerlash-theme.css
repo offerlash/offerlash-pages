@@ -130,6 +130,82 @@ footer {
 footer a { color: var(--color-text-secondary); }
 footer > span:first-child { color: var(--color-text-primary); font-weight: var(--font-weight-medium); }
 
+/* ========================= */
+/* Manual Theme Switch Tokens */
+/* ========================= */
+/* Ensure our explicit theme overrides beat prefers-color-scheme rules in tokens CSS. */
+:root[data-theme="light"] { color-scheme: light; }
+:root[data-theme="dark"] { color-scheme: dark; }
+
+/* Light (explicit) */
+:root[data-theme="light"] {
+  /* Brand + Material alignment */
+  --color-primary:#6B5BFF; /* brand primary */
+  --color-primary-light:#E6E3FF;
+  --color-primary-material:#3C6090; /* m3 primaryLight */
+  --color-primary-container:#D4E3FF;
+  /* Surfaces */
+  --color-background:#F6F7FC;
+  --color-surface:#FFFFFF;
+  --color-border:#E3E6F5;
+  --color-section-border:#E4E6F3;
+  /* Text */
+  --color-text-primary:#111827;
+  --color-text-secondary:#6B7280;
+  --color-text-muted:#8A90A6;
+  /* Semantics */
+  --color-success:#22C55E; --color-success-bg:#E3F7ED;
+  --color-warning:#F97316; --color-warning-bg:#FFEDD5;
+  --color-danger:#EF4444;  --color-danger-bg:#FEE2E2;
+  /* Accents */
+  --color-accent-cyan:#1CCAD3; --color-accent-cyan-bg:#E1F7F9;
+  --color-accent-yellow:#FFC241; --color-accent-yellow-bg:#FFF6E5;
+  --color-accent-rose:#FF647C; --color-accent-rose-bg:#FFEEF1;
+  /* Stats */
+  --color-stat-views-bg:#E6EDFF; --color-stat-views-accent:#3B6BFF;
+  --color-stat-copies-bg:#F1ECFF; --color-stat-copies-accent:#6759FF;
+  --color-stat-referrals-bg:#E7F7EE; --color-stat-referrals-accent:#16A34A;
+  --color-stat-coupons-bg:#FFF3E7; --color-stat-coupons-accent:#F97316;
+  /* Components */
+  --color-chip-bg:#E9EDFF; --color-chip-content:#4F5DFF;
+  --color-badge-purple-bg:#E5E2FF; --color-badge-purple-content:#5D54FF;
+}
+
+/* Dark (explicit) */
+:root[data-theme="dark"] {
+  /* Brand + Material alignment */
+  --color-primary:#B4A8FF; /* brand primary */
+  --color-primary-light:#2D2A52;
+  --color-primary-material:#A5C8FF; /* m3 primaryDark */
+  --color-primary-container:#224876;
+  /* Surfaces */
+  --color-background:#0F1116;
+  --color-surface:#191D26;
+  --color-border:#2D3342;
+  --color-section-border:#30374A;
+  /* Text */
+  --color-text-primary:#E4E7F1;
+  --color-text-secondary:#BEC3D4;
+  --color-text-muted:#9298AD;
+  /* Semantics */
+  --color-success:#49D27D; --color-success-bg:#123926;
+  --color-warning:#FFA353; --color-warning-bg:#3D2812;
+  --color-danger:#FF6868;  --color-danger-bg:#3D2022;
+  /* Accents */
+  --color-accent-cyan:#4ED3D9; --color-accent-cyan-bg:#0F383C;
+  --color-accent-yellow:#FFCB5C; --color-accent-yellow-bg:#3A2E10;
+  --color-accent-rose:#FF8299; --color-accent-rose-bg:#3D1C24;
+  /* Stats */
+  --color-stat-views-bg:#1C2840; --color-stat-views-accent:#7EA3FF;
+  --color-stat-copies-bg:#241F3F; --color-stat-copies-accent:#B2A5FF;
+  --color-stat-referrals-bg:#153324; --color-stat-referrals-accent:#4FD38F;
+  --color-stat-coupons-bg:#352313; --color-stat-coupons-accent:#FFB173;
+  /* Components */
+  --color-chip-bg:#2A3150; --color-chip-content:#9EA8FF;
+  --color-badge-purple-bg:#2B2456; --color-badge-purple-content:#CCC2FF;
+}
+
+
 /* RTL niceties */
 html[dir="rtl"] .nav .brand a { letter-spacing: 0; }
 html[dir="rtl"] .btn { letter-spacing: 0; }

@@ -16,6 +16,7 @@
     <meta property="twitter:image" content="https://offerlash.com/assets/images/header_app.png" />
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#6B5BFF" />
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#B4A8FF" />
+    <meta name="theme-color" data-dynamic content="#6B5BFF" />
     <link rel="preconnect" href="https://play.google.com" />
     <link rel="preconnect" href="https://apps.apple.com" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -29,13 +30,15 @@
     <link rel="stylesheet" href="../assets/css/offerlash-theme.css" />
     <link rel="author" href="/humans.txt" />
     <style>
-      .wrap { max-width: 720px; margin: 0 auto; padding: var(--space-xl) var(--space-lg); text-align: center; }
+      .wrap { max-width: 720px; margin: 0 auto; padding: var(--space-xl) var(--space-lg); text-align: center; position: relative; }
       h1 { margin-top: 0; font-size: var(--font-size-3xl); line-height: var(--line-height-tight); }
       p { color: var(--color-text-muted); }
+      .theme-toggle-inline { position: absolute; top: var(--space-lg); right: var(--space-lg); }
     </style>
   </head>
   <body>
     <div class="wrap">
+      <button id="theme-toggle" class="btn ghost theme-toggle theme-toggle-inline" type="button" aria-label="Toggle dark mode" aria-pressed="false">🌙</button>
       <h1>Open Offerlash</h1>
       <p>If the app didn’t open automatically, choose your store:</p>
       <div class="cta" style="justify-content:center;">
@@ -53,5 +56,6 @@
       gtag('config', 'G-XXXXXXXXXX');
     </script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script src="../assets/js/theme-toggle.js" defer></script>
   </body>
 </html>

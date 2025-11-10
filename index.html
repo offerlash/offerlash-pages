@@ -23,6 +23,7 @@
     <meta name="apple-itunes-app" content="app-id=6642654538, app-argument=https://offerlash.com/app" />
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#6B5BFF" />
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#B4A8FF" />
+    <meta name="theme-color" data-dynamic content="#6B5BFF" />
     <link rel="preconnect" href="https://play.google.com" />
     <link rel="preconnect" href="https://apps.apple.com" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -46,6 +47,8 @@
           <a href="marketers/">For Marketers</a>
           <span>·</span>
           <a href="ar/" hreflang="ar">العربية</a>
+          <span>·</span>
+          <button id="theme-toggle" class="btn ghost theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">🌙</button>
         </nav>
       </header>
 
@@ -110,5 +113,6 @@
       gtag('config', 'G-XXXXXXXXXX');
     </script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script src="assets/js/theme-toggle.js" defer></script>
   </body>
 </html>
