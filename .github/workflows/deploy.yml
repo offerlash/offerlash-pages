@@ -60,6 +60,7 @@ jobs:
           cp -v assets/css/responsive-enhancements.css _site/assets/css/
           cp -v assets/js/theme-toggle.js _site/assets/js/
           cp -v assets/js/lang.js _site/assets/js/
+          cp -v assets/js/i18n.js _site/assets/js/
           cp -v assets/images/favicon.png _site/assets/images/
           cp -v assets/images/header_app.png _site/assets/images/
       

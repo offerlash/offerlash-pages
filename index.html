@@ -102,11 +102,11 @@
         </div>
         
         <nav class="lang" role="navigation" aria-label="القائمة الرئيسية واللغات">
-          <a href="shoppers/" class="nav-link">أنا متسوق</a>
+          <a href="shoppers/" class="nav-link" data-i18n="nav.shoppers">أنا متسوق</a>
           <span class="separator" aria-hidden="true">·</span>
-          <a href="marketers/" class="nav-link">أنا مسوق</a>
+          <a href="marketers/" class="nav-link" data-i18n="nav.marketers">أنا مسوق</a>
           <span class="separator" aria-hidden="true">·</span>
-          <a href="en/" hreflang="en" lang="en" class="nav-link">English</a>
+          <a href="en/" hreflang="en" lang="en" class="nav-link" data-i18n="nav.lang.en">English</a>
           <span class="separator" aria-hidden="true">·</span>
           <button 
             id="theme-toggle" 
@@ -139,7 +139,7 @@
               rel="noopener noreferrer"
               aria-label="تحميل التطبيق من متجر Google Play"
             >
-              <span>تنزيل من Google Play</span>
+              <span data-i18n="cta.play">تنزيل من Google Play</span>
             </a>
             <a 
               class="btn ghost" 
@@ -148,14 +148,14 @@
               rel="noopener noreferrer"
               aria-label="تحميل التطبيق من متجر Apple App Store"
             >
-              <span>تنزيل من App Store</span>
+              <span data-i18n="cta.appstore">تنزيل من App Store</span>
             </a>
             <a 
               class="btn ghost" 
               href="app/"
               aria-label="فتح تطبيق أوفرلاش"
             >
-              <span>فتح التطبيق</span>
+              <span data-i18n="cta.openApp">فتح التطبيق</span>
             </a>
           </div>
         </section>
@@ -518,5 +518,6 @@
     <!-- Theme Toggle Script -->
     <script src="assets/js/theme-toggle.js" defer></script>
     <script src="assets/js/lang.js" defer></script>
+    <script src="assets/js/i18n.js" defer></script>
   </body>
 </html>
