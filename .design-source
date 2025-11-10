@@ -1,0 +1,31 @@
+# DESIGN SYSTEM SOURCE
+
+Source: ~/Workspace/Projects/offerlash/offerlash-app
+Status: Single Source of Truth
+Platform: Kotlin Multiplatform (Compose)
+Alignment: 100%
+
+## Quick Token Reference
+
+Colors:     ui/Color.kt, presentation/common/OfferLashColors.kt
+Spacing:    ui/Spacing.kt
+Dimensions: ui/Dimens.kt
+Typography: ui/Type.kt, ui/Font.kt
+Shapes:     ui/Shapes.kt
+Theme:      ui/Theme.kt
+
+## When Making Changes
+
+1. Check app tokens first
+2. Use existing tokens when possible
+3. If new token needed, add to app first
+4. Propagate to web after approval
+5. Document the change
+
+## Documentation
+
+- DESIGN_SOURCE_OF_TRUTH.md (This project)
+- DESIGN_SYSTEM.md (Complete reference)
+- offerlash_app_design_system_analysis.md (Deep analysis)
+
+Last Updated: 2024-11-10

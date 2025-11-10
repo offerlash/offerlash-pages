@@ -1,43 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <!-- Homepage (Arabic primary) -->
   <url>
     <loc>https://offerlash.com/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://offerlash.com/" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://offerlash.com/ar/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://offerlash.com/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://offerlash.com/en/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://offerlash.com/" />
+    <priority>1.0</priority>
+    <changefreq>weekly</changefreq>
   </url>
+  
+  <!-- Homepage (English) -->
   <url>
-    <loc>https://offerlash.com/ar/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://offerlash.com/" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://offerlash.com/ar/" />
+    <loc>https://offerlash.com/en/</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://offerlash.com/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://offerlash.com/en/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://offerlash.com/" />
+    <priority>0.9</priority>
+    <changefreq>weekly</changefreq>
   </url>
+  
+  <!-- Shoppers (Arabic) -->
   <url>
     <loc>https://offerlash.com/shoppers/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://offerlash.com/shoppers/" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://offerlash.com/ar/shoppers/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://offerlash.com/shoppers/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://offerlash.com/en/shoppers/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://offerlash.com/shoppers/" />
+    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
   </url>
+  
+  <!-- Shoppers (English) -->
   <url>
-    <loc>https://offerlash.com/ar/shoppers/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://offerlash.com/shoppers/" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://offerlash.com/ar/shoppers/" />
+    <loc>https://offerlash.com/en/shoppers/</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://offerlash.com/shoppers/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://offerlash.com/en/shoppers/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://offerlash.com/shoppers/" />
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
   </url>
+  
+  <!-- Marketers (Arabic) -->
   <url>
     <loc>https://offerlash.com/marketers/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://offerlash.com/marketers/" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://offerlash.com/ar/marketers/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://offerlash.com/marketers/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://offerlash.com/en/marketers/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://offerlash.com/marketers/" />
+    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
   </url>
+  
+  <!-- Marketers (English) -->
   <url>
-    <loc>https://offerlash.com/ar/marketers/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://offerlash.com/marketers/" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://offerlash.com/ar/marketers/" />
+    <loc>https://offerlash.com/en/marketers/</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://offerlash.com/marketers/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://offerlash.com/en/marketers/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://offerlash.com/marketers/" />
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
   </url>
+  
+  <!-- App -->
   <url>
     <loc>https://offerlash.com/app/</loc>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
   </url>
 </urlset>
