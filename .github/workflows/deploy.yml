@@ -40,7 +40,15 @@ jobs:
           cp -rv app/. _site/app/
           cp -rv shoppers/. _site/shoppers/
           cp -rv marketers/. _site/marketers/
-          cp -rv assets _site/
+          # Ship only the assets actually referenced by pages to keep the payload lean
+          mkdir -p _site/assets/js _site/assets/css _site/assets/images
+          cp -v assets/styles.min.css _site/assets/
+          cp -v assets/css/offerlash-theme.css _site/assets/css/
+          cp -v assets/css/responsive-enhancements.css _site/assets/css/
+          cp -v assets/js/theme-toggle.js _site/assets/js/
+          cp -v assets/js/lang.js _site/assets/js/
+          cp -v assets/images/favicon.png _site/assets/images/
+          cp -v assets/images/header_app.png _site/assets/images/
       
       - name: Rewrite absolute site URLs for GitHub Pages
         env:
