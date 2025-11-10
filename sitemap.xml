@@ -14,6 +14,30 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://offerlash.com/" />
   </url>
   <url>
+    <loc>https://offerlash.com/shoppers/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://offerlash.com/shoppers/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://offerlash.com/ar/shoppers/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://offerlash.com/shoppers/" />
+  </url>
+  <url>
+    <loc>https://offerlash.com/ar/shoppers/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://offerlash.com/shoppers/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://offerlash.com/ar/shoppers/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://offerlash.com/shoppers/" />
+  </url>
+  <url>
+    <loc>https://offerlash.com/marketers/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://offerlash.com/marketers/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://offerlash.com/ar/marketers/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://offerlash.com/marketers/" />
+  </url>
+  <url>
+    <loc>https://offerlash.com/ar/marketers/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://offerlash.com/marketers/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://offerlash.com/ar/marketers/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://offerlash.com/marketers/" />
+  </url>
+  <url>
     <loc>https://offerlash.com/app/</loc>
   </url>
 </urlset>

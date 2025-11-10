@@ -34,9 +34,11 @@ jobs:
           cp -v index.html robots.txt sitemap.xml _site/
           cp -v CNAME _site/ || true
           cp -v .nojekyll _site/
-          mkdir -p _site/ar _site/app
+          mkdir -p _site/ar _site/app _site/shoppers _site/marketers
           cp -rv ar/. _site/ar/
           cp -rv app/. _site/app/
+          cp -rv shoppers/. _site/shoppers/
+          cp -rv marketers/. _site/marketers/
           cp -rv assets _site/
 
       - name: Upload artifact
@@ -47,4 +49,3 @@ jobs:
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
-
