@@ -1,0 +1,134 @@
+/* Offerlash Web Theme — mapped to app design tokens
+   Source of truth: offerlash-app (Compose Multiplatform design system)
+   This file assumes tokens are defined in assets/styles.min.css (:root variables). */
+
+/* Base */
+/* Override font families to match app (Montserrat / Arabic fallback) */
+:root {
+  --font-family: 'Montserrat', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+  --font-family-arabic: 'Noto Sans Arabic', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+html, body {
+  background: var(--color-background);
+  color: var(--color-text-primary);
+  font-family: var(--font-family);
+  line-height: var(--line-height-normal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html[dir="rtl"] body {
+  font-family: var(--font-family-arabic);
+}
+
+a { color: var(--color-primary); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* Layout */
+.container {
+  max-width: var(--width-container);
+  margin: 0 auto;
+  padding: var(--space-screen-v) var(--space-screen-h);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+  padding: var(--space-md) 0;
+}
+
+.brand a {
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+}
+
+.lang { color: var(--color-text-muted); }
+.lang a { color: var(--color-text-secondary); }
+
+/* Hero */
+.hero {
+  padding: var(--space-xxl) 0 var(--space-xl);
+}
+.hero h1 {
+  font-size: var(--font-size-3xl);
+  line-height: var(--line-height-tight);
+  margin: 0 0 var(--space-sm);
+}
+.hero p {
+  color: var(--color-text-muted);
+  margin: 0 0 var(--space-md);
+}
+
+/* CTA buttons */
+.cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--touch-target-min);
+  padding: var(--padding-button-v) var(--padding-button-h);
+  border-radius: var(--radius-pill);
+  border: var(--border-thin) solid transparent;
+  font-weight: var(--font-weight-semibold);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+.btn:hover { transform: translateY(-1px); }
+.btn:active { transform: translateY(0); }
+
+.btn.primary {
+  background: var(--color-primary);
+  color: #fff;
+  box-shadow: var(--shadow-sm);
+}
+.btn.primary:hover { box-shadow: var(--shadow-md); }
+
+.btn.ghost {
+  background: transparent;
+  color: var(--color-text-primary);
+  border-color: color-mix(in srgb, var(--color-section-border) 100%, transparent);
+}
+
+/* Cards grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--space-lg);
+  margin-top: var(--space-xl);
+}
+
+.card {
+  background: var(--color-surface);
+  color: var(--color-text-primary);
+  border: var(--border-thin) solid var(--color-section-border);
+  border-radius: var(--radius-large);
+  min-height: var(--height-card-min);
+  padding: var(--space-lg);
+  box-shadow: none; /* prefer flat, bordered surfaces */
+}
+.card h3 { margin: 0 0 var(--space-xs); font-size: var(--font-size-lg); }
+.card p  { margin: 0; color: var(--color-text-secondary); }
+
+/* Footer */
+footer {
+  margin-top: var(--space-xxl);
+  padding-top: var(--space-lg);
+  border-top: var(--border-thin) solid var(--color-section-border);
+  color: var(--color-text-muted);
+}
+footer a { color: var(--color-text-secondary); }
+
+/* RTL niceties */
+html[dir="rtl"] .nav .brand a { letter-spacing: 0; }
+html[dir="rtl"] .btn { letter-spacing: 0; }
+
+/* Responsive typography scale */
+@media (min-width: 48rem) { /* ~768 */
+  .hero h1 { font-size: var(--font-size-4xl); }
+}

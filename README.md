@@ -6,6 +6,11 @@ Official marketing website for Offerlash — Real coupons, better shopping.
 
 Static website showcasing Offerlash's coupon platform for both shoppers and marketers. Built with vanilla HTML, CSS, and minimal JavaScript for optimal performance.
 
+This site now consumes the design system from the mobile app (single source of truth):
+- Tokens (colors, spacing, typography, radii) are exposed as CSS variables in `assets/styles.min.css`.
+- Base web theme is mapped in `assets/css/offerlash-theme.css` and applied to page components.
+- Light/Dark are handled via `prefers-color-scheme` with the same brand palette as the app.
+
 ## Structure
 
 - `/` - Homepage (EN)
@@ -24,6 +29,12 @@ python3 -m http.server 8000
 # or
 npx serve
 ```
+
+### Design tokens and theming
+- Source of truth: `../offerlash-app` Compose UI tokens.
+- Web tokens: defined as CSS custom properties under `:root` in `assets/styles.min.css`.
+- Component theme: `assets/css/offerlash-theme.css` matches app layout primitives (container, hero, grid, cards, buttons, nav).
+- Typography: pages load Montserrat (Latin) and Noto Sans Arabic; variables `--font-family` and `--font-family-arabic` are applied based on document `dir`.
 
 ## Deployment
 
