@@ -335,6 +335,10 @@ header.nav {
   color: var(--color-text-primary);
 }
 
+html[dir="rtl"] .brand {
+  letter-spacing: 0;
+}
+
 .brand a {
   color: inherit;
   text-decoration: none;
@@ -374,6 +378,10 @@ header.nav {
 .hero {
   padding: var(--space-xxl) 0 var(--space-xl);
   text-align: left;
+}
+
+html[dir="rtl"] .hero {
+  text-align: right;
 }
 
 .hero h1 {
@@ -579,9 +587,17 @@ footer span {
     gap: var(--space-sm);
   }
   
+  html[dir="rtl"] header.nav {
+    align-items: flex-end;
+  }
+  
   .lang {
     width: 100%;
     justify-content: flex-start;
+  }
+  
+  html[dir="rtl"] .lang {
+    justify-content: flex-end;
   }
 }
 
