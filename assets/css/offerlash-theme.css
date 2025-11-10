@@ -21,6 +21,11 @@ html[dir="rtl"] body {
   font-family: var(--font-family-arabic);
 }
 
+/* Ensure layout honors document direction */
+html[dir="rtl"] .container { direction: rtl; }
+html[dir="rtl"] .nav { flex-direction: row-reverse; }
+html[dir="rtl"] .cta { direction: rtl; }
+
 a { color: var(--color-primary); text-decoration: none; }
 a:hover { text-decoration: underline; }
 
@@ -120,9 +125,10 @@ footer {
   margin-top: var(--space-xxl);
   padding-top: var(--space-lg);
   border-top: var(--border-thin) solid var(--color-section-border);
-  color: var(--color-text-muted);
+  color: var(--color-text-secondary);
 }
 footer a { color: var(--color-text-secondary); }
+footer > span:first-child { color: var(--color-text-primary); font-weight: var(--font-weight-medium); }
 
 /* RTL niceties */
 html[dir="rtl"] .nav .brand a { letter-spacing: 0; }
