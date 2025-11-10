@@ -30,15 +30,27 @@
     <link rel="stylesheet" href="../assets/css/offerlash-theme.css" />
     <link rel="author" href="/humans.txt" />
     <style>
-      .wrap { max-width: 720px; margin: 0 auto; padding: var(--space-xl) var(--space-lg); text-align: center; position: relative; }
+      .wrap { max-width: 720px; margin: 0 auto; padding: var(--space-xl) var(--space-lg); text-align: center; }
       h1 { margin-top: 0; font-size: var(--font-size-3xl); line-height: var(--line-height-tight); }
       p { color: var(--color-text-muted); }
-      .theme-toggle-inline { position: absolute; top: var(--space-lg); right: var(--space-lg); }
     </style>
   </head>
   <body>
+    <header class="nav">
+      <div class="brand"><a href="../">Offerlash</a></div>
+      <nav class="lang">
+        <a href="../">Home</a>
+        <span>·</span>
+        <a href="../shoppers/">For Shoppers</a>
+        <span>·</span>
+        <a href="../marketers/">For Marketers</a>
+        <span>·</span>
+        <a href="../ar/" hreflang="ar">العربية</a>
+        <span>·</span>
+        <button id="theme-toggle" class="btn ghost theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">🌙</button>
+      </nav>
+    </header>
     <div class="wrap">
-      <button id="theme-toggle" class="btn ghost theme-toggle theme-toggle-inline" type="button" aria-label="Toggle dark mode" aria-pressed="false">🌙</button>
       <h1>Open Offerlash</h1>
       <p>If the app didn’t open automatically, choose your store:</p>
       <div class="cta" style="justify-content:center;">
