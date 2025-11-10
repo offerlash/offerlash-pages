@@ -64,7 +64,7 @@
 
   function updateLinks() {
     var currentLang = getDocLang();
-    var links = document.querySelectorAll('nav.lang a[hreflang]');
+    var links = document.querySelectorAll('nav.lang a[hreflang]:not([data-lang-static])');
     if (!links || !links.length) return;
     links.forEach(function(a) {
       var to = (a.getAttribute('hreflang') || '').toLowerCase();
@@ -75,7 +75,7 @@
   }
 
   function bindClicks() {
-    var links = document.querySelectorAll('nav.lang a[hreflang]');
+    var links = document.querySelectorAll('nav.lang a[hreflang]:not([data-lang-static])');
     links.forEach(function(a) {
       a.addEventListener('click', function(ev){
         var to = (a.getAttribute('hreflang') || '').toLowerCase();
@@ -126,4 +126,3 @@
     init();
   }
 })();
-

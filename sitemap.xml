@@ -67,4 +67,16 @@
     <priority>0.6</priority>
     <changefreq>monthly</changefreq>
   </url>
+
+  <!-- Policies (Arabic) -->
+  <url>
+    <loc>https://offerlash.com/privacy-policy.html</loc>
+    <priority>0.4</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+  <url>
+    <loc>https://offerlash.com/terms-of-use.html</loc>
+    <priority>0.4</priority>
+    <changefreq>yearly</changefreq>
+  </url>
 </urlset>

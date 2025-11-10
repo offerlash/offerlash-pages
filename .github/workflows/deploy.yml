@@ -24,6 +24,19 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Link hygiene check (disallow root-relative paths)
+        run: |
+          set -euo pipefail
+          # Disallow root-relative href/src and root CSS url(/...)
+          BAD=$(grep -R -nE 'href="/[^\"]|src="/[^\"]|url\(/[^)]' \
+            --exclude-dir=.git --exclude-dir=_site \
+            --include='*.html' --include='*.css' --include='*.js' . || true)
+          if [ -n "$BAD" ]; then
+            echo "Found disallowed absolute links in source:" >&2
+            echo "$BAD" >&2
+            exit 1
+          fi
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 

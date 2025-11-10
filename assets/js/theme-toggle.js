@@ -19,6 +19,11 @@
     var btn = document.getElementById('theme-toggle');
     if (btn) btn.setAttribute('aria-pressed', String(t === DARK));
     if (btn) btn.textContent = t === DARK ? '☀️' : '🌙';
+    if (btn) {
+      var nextLabel = t === DARK ? (btn.getAttribute('data-label-light') || '')
+                                 : (btn.getAttribute('data-label-dark') || '');
+      if (nextLabel) btn.setAttribute('aria-label', nextLabel);
+    }
   }
 
   function init() {
@@ -41,4 +46,3 @@
     init();
   }
 })();
-

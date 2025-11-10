@@ -7,7 +7,7 @@
 .skip-link {
   position: absolute;
   top: -40px;
-  right: 0;
+  inset-inline-start: 0;
   background: var(--color-primary);
   color: white;
   padding: var(--space-sm) var(--space-md);
@@ -77,21 +77,11 @@ html[dir="rtl"] .hero-title {
   content: '';
   position: absolute;
   bottom: 0;
-  right: 0;
+  inset-inline-start: 0;
   width: 0;
   height: 2px;
   background: var(--color-primary);
   transition: width var(--transition-base);
-}
-
-html[dir="rtl"] .nav-link::after {
-  right: 0;
-  left: auto;
-}
-
-html[dir="ltr"] .nav-link::after {
-  left: 0;
-  right: auto;
 }
 
 .nav-link:hover::after,
@@ -133,6 +123,9 @@ html[dir="ltr"] .nav-link::after {
   white-space: nowrap;
   user-select: none;
 }
+
+/* Prevent long words from overflowing on tiny screens */
+.hero-title, .hero-description, .card p { overflow-wrap: anywhere; word-break: normal; }
 
 .btn::before {
   content: '';
