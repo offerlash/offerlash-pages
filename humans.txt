@@ -1,0 +1,12 @@
+# humanstxt.org
+
+/* TEAM */
+Name: Offerlash Team
+Site: https://offerlash.com
+Location: Saudi Arabia
+
+/* SITE */
+Last update: 2024/11/10
+Standards: HTML5, CSS3
+Components: Vanilla JS
+Software: GitHub Pages, GitHub Actions

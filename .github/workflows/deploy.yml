@@ -31,10 +31,11 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p _site
-          cp -v index.html robots.txt sitemap.xml _site/
+          cp -v index.html robots.txt sitemap.xml humans.txt 404.html manifest.json _site/
           cp -v CNAME _site/ || true
           cp -v .nojekyll _site/
-          mkdir -p _site/ar _site/app _site/shoppers _site/marketers
+          mkdir -p _site/.well-known _site/ar _site/app _site/shoppers _site/marketers
+          cp -v .well-known/security.txt _site/.well-known/
           cp -rv ar/. _site/ar/
           cp -rv app/. _site/app/
           cp -rv shoppers/. _site/shoppers/

@@ -7,7 +7,22 @@
     <meta name="description" content="Open Offerlash or install it from your app store." />
     <link rel="canonical" href="https://offerlash.com/app/" />
     <meta name="robots" content="index,follow" />
-    <link rel="stylesheet" href="../assets/styles.css" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Open Offerlash App" />
+    <meta property="og:description" content="Open Offerlash or install it from your app store." />
+    <meta property="og:url" content="https://offerlash.com/app/" />
+    <meta property="og:image" content="https://offerlash.com/assets/images/header_app.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="twitter:image" content="https://offerlash.com/assets/images/header_app.png" />
+    <meta name="theme-color" content="#1f8fff" />
+    <link rel="preconnect" href="https://play.google.com" />
+    <link rel="preconnect" href="https://apps.apple.com" />
+    <link rel="shortcut icon" type="image/png" href="../assets/images/favicon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon.png" />
+    <link rel="apple-touch-icon" href="../assets/images/favicon.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="stylesheet" href="../assets/styles.min.css" />
+    <link rel="author" href="/humans.txt" />
     <style>
       .wrap { max-width: 720px; margin: 0 auto; padding: 48px 24px; text-align: center; }
       h1 { margin-top: 0; }
@@ -24,5 +39,14 @@
       </div>
       <p style="margin-top:24px; font-size:14px;">Universal link: <a href="https://offerlash.com/app">https://offerlash.com/app</a></p>
     </div>
+    
+    <!-- Analytics -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
   </body>
 </html>
