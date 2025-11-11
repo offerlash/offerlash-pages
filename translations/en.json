@@ -1,0 +1,22 @@
+{
+  "nav": {
+    "home": "Home",
+    "shoppers": "For Shoppers",
+    "marketers": "For Marketers",
+    "menu": "Menu",
+    "lang": { "ar": "العربية", "en": "English" }
+  },
+  "cta": {
+    "play": "Get it on Google Play",
+    "appstore": "Download on the App Store",
+    "openApp": "Open the app"
+  },
+  "footer": {
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Use"
+  },
+  "aria": {
+    "toggle": { "dark": "Switch to dark mode", "light": "Switch to light mode" }
+  }
+}
+

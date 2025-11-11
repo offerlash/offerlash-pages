@@ -30,6 +30,25 @@
     }catch(e){ return ''; }
   }
 
+  function basePrefix(){
+    try{
+      var segs = window.location.pathname.split('/').filter(Boolean);
+      if (segs.length && /-pages$/.test(segs[0])) return '/' + segs[0];
+      return '';
+    } catch(e){ return ''; }
+  }
+
+  function fetchTranslations(cb){
+    var url = basePrefix() + '/translations/' + lang + '.json';
+    try{
+      fetch(url, { cache: 'no-cache' })
+        .then(function(r){ return r.ok ? r.json() : null; })
+        .then(function(json){ if (json) { T[lang] = Object.assign({}, T[lang], json); } })
+        .catch(function() {})
+        .finally(function(){ cb(); });
+    } catch (e) { cb(); }
+  }
+
   function apply(){
     // text nodes
     document.querySelectorAll('[data-i18n]').forEach(function(el){
@@ -52,9 +71,6 @@
     });
   }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', apply);
-  } else {
-    apply();
-  }
+  function init(){ fetchTranslations(apply); }
+  if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', init); } else { init(); }
 })();

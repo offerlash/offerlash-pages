@@ -1,0 +1,22 @@
+{
+  "nav": {
+    "home": "الصفحة الرئيسية",
+    "shoppers": "أنا متسوق",
+    "marketers": "أنا مسوق",
+    "menu": "القائمة",
+    "lang": { "ar": "العربية", "en": "English" }
+  },
+  "cta": {
+    "play": "تنزيل من Google Play",
+    "appstore": "تنزيل من App Store",
+    "openApp": "فتح التطبيق"
+  },
+  "footer": {
+    "privacy": "سياسة الخصوصية",
+    "terms": "شروط الاستخدام"
+  },
+  "aria": {
+    "toggle": { "dark": "تفعيل الوضع الداكن", "light": "تفعيل الوضع الفاتح" }
+  }
+}
+
