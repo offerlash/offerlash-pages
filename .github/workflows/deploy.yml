@@ -101,6 +101,24 @@ jobs:
           find _site -type f \( -name '*.html' -o -name '*.xml' -o -name '*.txt' -o -name '*.json' \) -print0 |
             xargs -0 sed -i "s#https://offerlash.com/#${BASE_URL}#g"
 
+      - name: Normalize asset links to repo root
+        env:
+          ASSET_BASE: /${{ github.event.repository.name }}
+        run: |
+          set -euo pipefail
+          # Ensure all asset links resolve from the repo root to avoid path issues under /en/ or other subdirs
+          for ext in html xml json; do
+            find _site -type f -name "*.$ext" -print0 | xargs -0 -I{} sed -i \
+              -e "s#href=\"\(\./\)\?assets/#href=\"${ASSET_BASE}/assets/#g" \
+              -e "s#href=\"\(\.\./\)\+assets/#href=\"${ASSET_BASE}/assets/#g" \
+              -e "s#src=\"\(\./\)\?assets/#src=\"${ASSET_BASE}/assets/#g" \
+              -e "s#src=\"\(\.\./\)\+assets/#src=\"${ASSET_BASE}/assets/#g" \
+              -e "s#href=\"\(\./\)\?manifest.json#href=\"${ASSET_BASE}/manifest.json#g" \
+              -e "s#href=\"\(\.\./\)\+manifest.json#href=\"${ASSET_BASE}/manifest.json#g" \
+              -e "s#href=\"\(\./\)\?humans.txt#href=\"${ASSET_BASE}/humans.txt#g" \
+              -e "s#href=\"\(\.\./\)\+humans.txt#href=\"${ASSET_BASE}/humans.txt#g" {} || true
+          done
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
