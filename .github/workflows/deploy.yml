@@ -64,6 +64,29 @@ jobs:
           cp -v assets/js/i18n.js _site/assets/js/
           cp -v assets/images/favicon.png _site/assets/images/
           cp -v assets/images/header_app.png _site/assets/images/
+      
+      - name: Optimize social image and PWA icons
+        run: |
+          set -euo pipefail
+          # Ensure ImageMagick is available
+          (convert -version >/dev/null 2>&1) || (sudo apt-get update -y && sudo apt-get install -y imagemagick >/dev/null 2>&1 || true)
+          # Generate compressed OG image (JPEG) and update references
+          if [ -f _site/assets/images/header_app.png ]; then
+            convert _site/assets/images/header_app.png -resize 1200x630\> -strip -quality 82 _site/assets/images/header_app.jpg || true
+            find _site -type f \( -name '*.html' -o -name '*.xml' -o -name '*.json' \) -print0 | xargs -0 sed -i 's/header_app\.png/header_app.jpg/g'
+          fi
+          # Generate proper PWA icons from favicon
+          if [ -f _site/assets/images/favicon.png ]; then
+            convert _site/assets/images/favicon.png -resize 192x192 -strip _site/assets/images/icon-192.png || true
+            convert _site/assets/images/favicon.png -resize 512x512 -strip _site/assets/images/icon-512.png || true
+            # Update manifest icon srcs
+            if [ -f _site/manifest.json ]; then
+              sed -i '0,/"src": "assets\/images\/favicon.png"/s//"src": "assets\/images\/icon-192.png"/' _site/manifest.json || true
+              sed -i '0,/"sizes": "192x192"/s//"sizes": "192x192"/' _site/manifest.json || true
+              sed -i '0,/"src": "assets\/images\/favicon.png"/s//"src": "assets\/images\/icon-512.png"/' _site/manifest.json || true
+              sed -i '0,/"sizes": "512x512"/s//"sizes": "512x512"/' _site/manifest.json || true
+            fi
+          fi
           # Translations
           mkdir -p _site/translations
           cp -v translations/*.json _site/translations/
