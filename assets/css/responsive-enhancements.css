@@ -102,6 +102,15 @@ html[dir="rtl"] .hero-title {
   opacity: 0.6;
 }
 
+/* ===== MOBILE NAV TOGGLE ===== */
+.menu-toggle { display: none; }
+@media (max-width: 480px) {
+  .menu-toggle { display: inline-flex; align-items: center; gap: var(--space-xs); }
+  header.nav { row-gap: var(--space-sm); }
+  header.nav .lang { display: none; width: 100%; }
+  header.nav[data-open="true"] .lang { display: block; }
+}
+
 /* ===== ENHANCED BUTTONS ===== */
 .btn {
   position: relative;

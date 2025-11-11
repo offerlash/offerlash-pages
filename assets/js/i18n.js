@@ -8,13 +8,13 @@
   var lang = (document.documentElement.getAttribute('lang')||'ar').toLowerCase() === 'en' ? 'en' : 'ar';
   var T = {
     en: {
-      nav: { home: 'Home', shoppers: 'For Shoppers', marketers: 'For Marketers', lang: { ar: 'العربية', en: 'English' } },
+      nav: { home: 'Home', shoppers: 'For Shoppers', marketers: 'For Marketers', menu: 'Menu', lang: { ar: 'العربية', en: 'English' } },
       cta: { play: 'Get it on Google Play', appstore: 'Download on the App Store', openApp: 'Open the app' },
       footer: { privacy: 'Privacy Policy', terms: 'Terms of Use' },
       aria: { toggle: { dark: 'Switch to dark mode', light: 'Switch to light mode' } }
     },
     ar: {
-      nav: { home: 'الصفحة الرئيسية', shoppers: 'أنا متسوق', marketers: 'أنا مسوق', lang: { ar: 'العربية', en: 'English' } },
+      nav: { home: 'الصفحة الرئيسية', shoppers: 'أنا متسوق', marketers: 'أنا مسوق', menu: 'القائمة', lang: { ar: 'العربية', en: 'English' } },
       cta: { play: 'تنزيل من Google Play', appstore: 'تنزيل من App Store', openApp: 'فتح التطبيق' },
       footer: { privacy: 'سياسة الخصوصية', terms: 'شروط الاستخدام' },
       aria: { toggle: { dark: 'تفعيل الوضع الداكن', light: 'تفعيل الوضع الفاتح' } }
@@ -58,4 +58,3 @@
     apply();
   }
 })();
-
